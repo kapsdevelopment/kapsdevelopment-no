@@ -156,6 +156,44 @@ section {
   transform: none;
 }
 
+/* Tablet mock for apps designed around a wider canvas */
+.tabletwrap {
+  display: flex;
+  justify-content: center;
+}
+
+.tablet {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+  position: relative;
+}
+
+.tablet::before {
+  content: "";
+  display: block;
+  padding-top: 62.5%;
+}
+
+.tablet .screen {
+  position: absolute;
+  inset: 8px;
+  height: auto;
+  border-radius: 23px;
+}
+
+.screen--tablet {
+  background: #f7f1e5;
+}
+
+.screen--tablet .screens img {
+  object-fit: contain;
+  transform: none;
+}
+
 /* Responsive: if cards are narrow, center the phone a bit */
 @media (max-width: 768px) {
   .phonewrap {
@@ -163,6 +201,13 @@ section {
   }
   .phone {
     width: 200px;
+  }
+  .tablet {
+    border-radius: 22px;
+  }
+  .tablet .screen {
+    inset: 5px;
+    border-radius: 17px;
   }
 }
 
